@@ -25,4 +25,8 @@ pip install --no-index --no-cache-dir pytorch3d -f https://anaconda.org/pytorch3
 2. NeRF的隐式重建可以获得模型吗，还是只能获得某个视角下观察到的图片？
 3. 如何解决NeRF/GS渲染时需要的视角/相机参数问题
 4. 使用Diffusion Model还算是重建吗？
-5. 
+
+
+下周工作计划:
+1. 解决问题1-5
+2. 查看论文Diffusion Model+NeRF

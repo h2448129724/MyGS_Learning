@@ -10,8 +10,10 @@ conda install pytorch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 pytorch-cuda=
 
 # Pytorch3D 0.7.5
 pip install --no-index --no-cache-dir pytorch3d -f https://anaconda.org/pytorch3d/pytorch3d/0.7.5/download/linux-64/pytorch3d-0.7.5-py39_cu118_pyt210.tar.bz2
- conda install /home/ailab_306/下载/linux-64_pytorch3d-0.7.5-py39_cu118_pyt201.tar.bz2
 
+conda install /home/ailab_306/下载/linux-64_pytorch3d-0.7.5-py39_cu118_pyt201.tar.bz2
+
+conda install -c fvcore -c iopath -c conda-forge fvcore iopath
 
 研究思路/想法:
 

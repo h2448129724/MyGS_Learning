@@ -15,6 +15,54 @@ conda install /home/ailab_306/下载/linux-64_pytorch3d-0.7.5-py39_cu118_pyt201.
 
 conda install -c fvcore -c iopath -c conda-forge fvcore iopath
 
+在使用Hugging Face的模型时，通常使用的是from_pretrained方法来加载模型。默认情况下，这个方法会先查询网络最新版本 (通常报错在这里)，再检查本地是否已有该模型，如果没有，则会从Hugging Face的模型库中下载。
+
+如果你想优先使用本地已有的模型，并且只在缺少的情况下从网络上下载，你可以使用以下方法：
+
+1 使用from_pretrained方法： 这个方法是检测本地是否有模型的，如果没有，它将自动下载。所以，如果你只是想确保始终使用最新的模型，你可以定期手动更新本地模型，或者使用版本控制来跟踪模型的更新。
+
+```python
+
+from transformers import BertModel
+model = BertModel.from_pretrained('bert-base-uncased')
+```
+
+
+
+2 手动检查模型文件： 如果想要自己控制下载逻辑，可以先检查本地是否有该模型，如果没有，再使用from_pretrained。
+
+```python
+
+from transformers import BertModel
+import os
+model_name = 'bert-base-uncased'
+local_model_path = f'./{model_name}'
+if os.path.exists(local_model_path):
+    model = BertModel.from_pretrained(local_model_path)
+else:
+    model = BertModel.from_pretrained(model_name)
+
+```
+
+3 使用环境变量： 你还可以通过设置环境变量TRANSFORMERS_OFFLINE为1来强制transformers库使用离线模式。在这个模式下，from_pretrained将只尝试从本地加载模型，如果找不到，则会抛出异常。
+
+```python
+
+import os
+os.environ["TRANSFORMERS_OFFLINE"] = "1"
+from transformers import BertModel
+try:
+    model = BertModel.from_pretrained('bert-base-uncased')
+except Exception as e:
+    print("无法从本地加载模型，请检查模型文件或网络连接。")
+```
+
+
+
+4 使用镜像 export HF_ENDPOINT=https://hf-mirror.com  并donate。 作者：带娃爱好者 https://www.bilibili.com/read/cv32290878/ 出处：bilibili
+
+
+
 研究思路/想法:
 
 

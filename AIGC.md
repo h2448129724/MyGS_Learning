@@ -1,5 +1,9 @@
-# AIGC
+# AIGC / Image to 3D
+generating 3D assets from a reference image/single-view 3D reconstruction
 
+image captioning models?
+
+Recently, Zero-1-to-3 (Liu et al., 2023b) explicitly models the camera transformation into 2D diffusion models and enable zero-shot image-conditioned novel view synthesis. It achieves high 3D generation quality when combined with SDS, but still suffers from long optimization time
 ## Zero-1-to-3: Zero-shot One Image to 3D Object
 
 ## Shap-E
@@ -47,3 +51,15 @@ Time：takes about 3 hours and uses only one Tesla 32GB V100 GPU.
 ![image-20240715140344991](D:\研究生\科研\AIGC.assets\image-20240715140344991-17210234258421.png)
 
 ![image-20240715144710690](D:\研究生\科研\AIGC.assets\image-20240715144710690.png)
+
+Loss
+
+![image-20240805161937416](D:\研究生\科研\AIGC.assets\image-20240805161937416.png)
+
+![image-20240805162024271](D:\研究生\科研\AIGC.assets\image-20240805162024271.png)
+
+多边形网格提取
+
+block-wise local density query and back-projected color.
+
+local density query：

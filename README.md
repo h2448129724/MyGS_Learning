@@ -81,3 +81,14 @@ except Exception as e:
 下周工作计划:
 1. 解决问题1-5
 2. 查看论文Diffusion Model+NeRF
+
+v39:
+生成器学习率：0.0006
+判别器学习率：0.0001
+GAN：0.01
+![image](https://github.com/user-attachments/assets/9ef59b0e-f393-46db-b321-c50a5805efb2)
+
+v40:
+生成器学习率：0.001
+判别器学习率：0.0001
+GAN：0.01
